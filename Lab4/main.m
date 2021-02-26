@@ -42,12 +42,12 @@ int main(int argc, const char * argv[]) {
                 /// assign ID
                 [contact1 setId: idCount];
                 idCount++;
-               
-                /// print all the contact
-                [contactList printContactList];
+  
+                NSLog(@"Name: %@, Email address: %@ has been added to the contact list.", [contact1 name], [contact1 email]);
        
             } else if ([response isEqualToString:@"list"]) {
-                NSLog(@"Display list");
+                /// print all the contact
+                [contactList printContactList];
                 
             } else if ([response isEqualToString:@"quit"]) {
                 NSLog(@"Bye!");
