@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init;
 -(void)addContact:(Contact *)newContact;
 - (void) printContactList;
+- (void) checkIdAndDisplayDetail: (NSString *) Id;
 @end
 
 NS_ASSUME_NONNULL_END

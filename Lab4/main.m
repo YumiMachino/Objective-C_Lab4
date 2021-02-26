@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         
         NSInteger idCount = 0;
         
-        NSString *promptMessage = @"\nThe menu:\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nquit - Exit Application\n>";
+        NSString *promptMessage = @"\nThe menu:\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nshow - display detail by contact id\nquit - Exit Application\n>";
         
         InputCollector *inputCollector = [[InputCollector alloc] initWithPrompt:promptMessage];
         
@@ -30,10 +30,10 @@ int main(int argc, const char * argv[]) {
             if ([response isEqualToString:@"new"]){
                 /// get full name
                 NSString *fullName = [inputCollector inputForPrompt:@"\nEnter full name: "];
-                NSLog(@"name: %@", fullName);
+                NSLog(@"\nname: %@", fullName);
                 /// get email
                 NSString *emailAddress = [inputCollector inputForPrompt:@"\nEnter email address: "];
-                NSLog(@"address: %@", emailAddress);
+                NSLog(@"\naddress: %@", emailAddress);
                 
                 Contact *contact1 = [[Contact alloc]initWithName:fullName AndWith:emailAddress];
                 
@@ -43,11 +43,16 @@ int main(int argc, const char * argv[]) {
                 [contact1 setId: idCount];
                 idCount++;
   
-                NSLog(@"Name: %@, Email address: %@ has been added to the contact list.", [contact1 name], [contact1 email]);
+                NSLog(@"\nName: %@, Email address: %@ has been added to the contact list.", [contact1 name], [contact1 email]);
        
             } else if ([response isEqualToString:@"list"]) {
                 /// print all the contact
                 [contactList printContactList];
+                
+            } else if ([response isEqualToString:@"show"]){
+                NSLog(@"show");
+                NSString *inputId = [inputCollector inputForPrompt:@"\nEnter a contact id : "];
+                [contactList checkIdAndDisplayDetail:inputId];
                 
             } else if ([response isEqualToString:@"quit"]) {
                 NSLog(@"Bye!");

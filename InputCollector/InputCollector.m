@@ -31,6 +31,10 @@
     NSString *trimmed_result = [result stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return trimmed_result;
-    
 }
+
+
+
+
+
 @end
