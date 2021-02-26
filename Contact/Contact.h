@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Contact : NSObject
 
-@property NSInteger Id;
-@property NSString* name;
-@property NSString* email;
+@property (nonatomic)  NSInteger Id;
+@property (nonatomic)  NSString* name;
+@property (nonatomic) NSString* email;
 
 - (instancetype)initWithName:(NSString*) name AndWith: (NSString*) email;
 
